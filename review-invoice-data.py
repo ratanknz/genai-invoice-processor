@@ -16,6 +16,10 @@ if 'counter' not in st.session_state: st.session_state.counter = 0
 pathsToInvoices = [os.path.join(local_download_folder,f) for f in os.listdir(local_download_folder)]
 # print(pathsToInvoices)
 
+st.header("Review invoice and extracted data")
+st.write("Click Next to start")
+
+
 def next(): 
     # st.write('next ' + str(st.session_state.counter))
     if st.session_state.counter < len(pathsToInvoices):
