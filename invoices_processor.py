@@ -24,7 +24,7 @@ Please proceed with the analysis based on the above instructions. Please don't s
 """
 
 # Bedrock model ID
-model_id = "anthropic.claude-3-sonnet-20240229-v1:0"  # Replace with your modelID
+model_id = "anthropic.claude-3-sonnet-20240229-v1:0"
 
 # Output file where results will be stored
 output_file = "./" + "processed_invoice_output.json"
@@ -64,13 +64,16 @@ def batch_process_s3_bucket_invoices(bucket_name, prefix, local_download_folder)
     no_of_invoices_processed = 0 
     results = {}
 
-    # Check if the folder exists, if not, create it
+    # Delete if the folder exists
     if os.path.exists(local_download_folder):
+        # print(local_download_folder)
         shutil.rmtree(local_download_folder)
 
+    # Delete if output file exists
     if os.path.exists(output_file):
         os.remove(output_file)
 
+    # Create new folder for saving invoices
     os.makedirs(local_download_folder)  
 
     # Pagination handling
