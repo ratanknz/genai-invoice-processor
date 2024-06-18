@@ -25,30 +25,20 @@ This application uses Amazon Bedrock Knowledge Base - Chat with document feature
 
 ## Configuration
 
-1. Set up your AWS credentials by following the instructions in the AWS Documentation.
-2. Create a S3 bucket to store the invoices, CLI commands below
-    - aws s3 mb s3://your-bucket-name --region your-region
-    - Replace your-bucket-name with the name you want to give your S3 bucket. Remember, bucket names need to be globally unique across all AWS users.
-    - Replace your-region with the AWS region code where you want the bucket to reside, such as us-east-1, eu-west-1, etc.
-3. Copy the invoices to S3 bucket
-    - aws s3 cp /path/to/your/local/folder s3://your-bucket-name/folder-name/
-    - Note folder-name is required for this example
-4. Set the required environment variables/parameters:
-    - MODEL_ID: The Bedrock model ID to be used for invoice processing (e.g., anthropic.claude-3-sonnet-20240229-v1:0).
-    - AWS_REGION: The AWS region where your resources are located (eg., us-east-1).
+1. Set up your AWS CLI
+2. Store invoices inside S3 bucket. PUT IT INSIDE A FOLDER (e.g. invoice)
 
-## Steps to Run/Usage
+## Steps to Run
 
 To process invoices stored in an S3 bucket, run the following command:
 
 ### Step 1: Process invoices
 
 ```bash
-python invoices_processor.py --bucket_name='<<replcace this with the name of the s3 bucket>>' --prefix='<<replace with name of the folder>>' 
-# e.g. python invoices_processor.py --bucket_name='gen_ai_demo_bucket' --prefix='invoice'
-Replace 
-1. <your-bucket-name> with the name of your S3 bucket, and 
-2. <folder-prefix> with the prefix (folder path) where the invoices are stored.
+python invoices_processor.py --bucket_name='<<replcace this with the name of the s3 bucket>>' --prefix='<<replace with name of the folder>>'
+
+e.g. python invoices_processor.py --bucket_name='gen_ai_demo_bucket' --prefix='invoice'
+
 ```
 After successful completion of the job, you should see a invoice folder in your local file system with all the s3 invoices. You will also see a processed_invoice_output.json file with all the metadata extracted by Amazon Bedrock Knowledge Base using Claude Sonnet Model.
 
@@ -57,6 +47,8 @@ To review the processed invoice data, you can run the Streamlit app with the fol
 
 ```bash
 streamlit run review-invoice-data.py
+or 
+python -m streamlit run review-invoice-data.py
 ```
 The Streamlit app will open in your default web browser, allowing you to view and interact with the processed invoice data.
 
