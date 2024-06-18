@@ -23,5 +23,5 @@ After successful completion of the job, you should see a invoice folder in your 
 ### Step 2: Run the Streamlit app to review pdf invoice and corresponding data extracted by Amazon Bedrock
 
 ```bash
-python review-invoice-data.py
+python -m streamlit run review-invoice-data.py
 ```
