@@ -6,13 +6,14 @@ This application uses Amazon Bedrock Knowledge Base with Claude Sonnet LLM to ex
 
 - Python 3.x
 - Required Python packages (can be installed via `requirements.txt`)
-- Store invoices (PDF) insdie S3 bucket inside a folder (e.g. invoice).
-- AWS CLI installed an configured
-
-## Steps to Run
 ```
 pip install -r requirements.txt 
 ```
+- Store invoices (PDF) inside a folder (e.g. invoice) in a S3 bucket
+- AWS CLI installed an configured
+
+## Steps to Run
+
 ### Step 1: Process invoices
 
 ```bash
