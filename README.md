@@ -20,7 +20,8 @@ python invoices_processor.py --bucket_name='<<replcace this with the name of the
 ```
 After successful completion of the job, you should see a invoice folder in your local file system with all the s3 invoices. You will also see a processed_invoice_output.json file with all the metadata extracted by Amazon Bedrock Knowledge Base using Claude Sonnet Model.
 
-### Step 2: Run the Streamlit app to review pdf invoice and corresponding data extracted by Amazon Bedrock
+### Step 2: Review invoice data extracted by Amazon Bedrock
+Run the streamlit app to review the pdf invoice and data extracted from it
 
 ```bash
 python -m streamlit run review-invoice-data.py
