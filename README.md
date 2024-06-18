@@ -10,7 +10,9 @@ This application uses Amazon Bedrock Knowledge Base with Claude Sonnet LLM to ex
 - AWS CLI installed an configured
 
 ## Steps to Run
-
+```
+pip install -r requirements.txt 
+```
 ### Step 1: Process invoices
 
 ```bash
