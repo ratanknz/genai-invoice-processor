@@ -1,4 +1,4 @@
-# GenAI powered invoice processing and review application
+# GenAI-powered invoice processing & review app
 
 This application uses Amazon Bedrock Knowledge Base with Claude Sonnet LLM to extract information from pdf invoices and provides a streamlit app which displays the invoices and extracted information side-by-side for easier review. 
 
